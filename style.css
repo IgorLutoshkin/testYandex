@@ -109,3 +109,30 @@ legend {
   display: block;
 }
 /* reset end */
+
+body {
+  font-family: "Golos Text", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+/* main start */
+.main {
+  width: 1366px;
+  min-height: 700px;
+  background-image: url(./img/main-background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.wrap-logo {
+  padding-left: 72px;
+  padding-top: 28.3px;
+  display: flex;
+}
+
+button {
+  background-color: red;
+}
+
+/* main end */
