@@ -136,3 +136,10 @@ button {
 }
 
 /* main end */
+
+
+/* running-line start */
+.running-line {
+  display: flex;
+}
+/* running-line end */
