@@ -137,7 +137,6 @@ button {
 
 /* main end */
 
-
 /* running-line start */
 .running-line {
   display: flex;
@@ -146,9 +145,32 @@ button {
 
 /* info-chess start */
 
+.info-lecture {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-chess-session {
+  display: flex;
+}
+table {
+  border-collapse: collapse; /* объединили границы */
+}
+
+td {
+  border-bottom: 1px solid black; /* создает горизонтальную линию */
+  padding: 5px;
+}
+
+td + td {
+  border-left: 1px solid black; /* создает вертикальную линию */
+}
+
+.bottom-row {
+  border-bottom: none;
+}
+
 /* info-chess end */
-
-
 
 /* stages-of-transformation start */
 .grid-wrap {
