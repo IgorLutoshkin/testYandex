@@ -116,6 +116,11 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+.content-wrap {
+  width: 1222px;
+  margin: 0 auto;
+}
 /* main start */
 .main {
   width: 1366px;
@@ -126,13 +131,74 @@ body {
 }
 
 .wrap-logo {
-  padding-left: 72px;
-  padding-top: 28.3px;
+  padding-top: 26px;
   display: flex;
 }
+.content-wrap > p {
+  max-width: 542px;
+  color: rgb(49, 49, 49);
+  font-family: Merriweather, sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: 0px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.main-content-1 {
+  padding-top: 62px;
+}
+.main-content-2 {
+  padding-left: 91px;
+}
+.main-content-3 {
+  padding-left: 34px;
+}
+.main-content-4 {
+  padding-top: 24px;
+  display: block;
+  max-width: 542px;
+  color: rgb(49, 49, 49);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  text-align: center;
+}
+.btn-block {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+  max-width: 542px;
+}
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 66px;
+  width: 263px;
+  height: 72px;
+  padding: 12px 49px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.8px;
+  text-align: center;
+}
 
-button {
-  background-color: red;
+.button-left {
+  color: rgb(255, 255, 255);
+  background: rgb(31, 31, 31);
+}
+.button-right {
+  border: 2px solid rgb(31, 31, 31);
+  background: rgb(255, 255, 255);
+  color: rgb(31, 31, 31);
+}
+.button-left:hover {
+  color: rgb(31, 31, 31);
+  background: rgb(251, 206, 81);
+}
+.button-right:hover {
+  color: rgb(255, 255, 255);
+  background: rgb(31, 31, 31);
 }
 
 /* main end */
