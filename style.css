@@ -205,8 +205,61 @@ body {
 
 /* running-line start */
 .running-line {
+  width: 1366px;
   display: flex;
+  background-color: #f54932;
+  overflow: hidden;
 }
+.separator-point {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.running-line-wrap-1,
+.running-line-wrap-2 {
+  flex-shrink: 0; /* чтобы блоки не наезжали  друг на друга */
+  display: flex;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  white-space: nowrap;
+}
+
+.running-line-content {
+  font-family: Merriweather, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.running-line-wrap-1 {
+  animation: marquee1 40s infinite linear;
+  animation-delay: -40s;
+}
+
+.running-line-wrap-2 {
+  animation: marquee2 40s infinite linear;
+  animation-delay: -20s; /* 40/2 = 20 */
+}
+
+@keyframes marquee1 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
 /* running-line end */
 
 /* info-chess start */
