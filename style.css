@@ -263,30 +263,113 @@ body {
 /* running-line end */
 
 /* info-chess start */
-
+.info-chess {
+  width: 1262px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
 .info-lecture {
+  margin-left: 24px;
+  display: flex;
+  gap: 68px;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.info-lecture__desc,
+.aside-desc {
+  max-width: 764px;
+  font-family: Merriweather;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+  letter-spacing: 0px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.topic-lecture {
+  color: #f54932;
+}
+
+.info-chess-session__aside {
+  padding-top: 48px;
+  padding-left: 17px;
+}
+.info-chess-session {
+  margin-top: 17px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
-.info-chess-session {
-  display: flex;
-}
-table {
+.aside-table {
+  width: 100%;
+  margin-top: 57px;
   border-collapse: collapse; /* объединили границы */
+}
+.left-column-table {
+  padding: 16px 16px 16px 0;
+  width: 306px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #313131;
+  opacity: 70%;
+  box-sizing: border-box;
+}
+
+.right-column-table {
+  padding: 16px 0 16px 16px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.first-child {
+  padding-top: 0;
 }
 
 td {
-  border-bottom: 1px solid black; /* создает горизонтальную линию */
-  padding: 5px;
+  border-bottom: 1px solid #d0d0d0; /* создает горизонтальную линию */
 }
 
 td + td {
-  border-left: 1px solid black; /* создает вертикальную линию */
+  border-left: 1px solid #d0d0d0; /* создает вертикальную линию */
 }
 
-.bottom-row {
+.last-child {
+  position: relative;
+  padding-bottom: 0;
   border-bottom: none;
+}
+
+.old-price {
+  position: relative;
+  text-decoration: none;
+}
+
+.old-price::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 2px solid red; /* Цвет линии зачеркивания */
+  
+  z-index: 1;/* ******* */
+}
+.aside-table__link-admin {
+  display: block;
+  margin-top: 48px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #3057a2;
 }
 
 /* info-chess end */
