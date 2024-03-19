@@ -1,3 +1,7 @@
+* {
+  outline: 1px solid red;
+}
+
 /* reset start  */
 * {
   padding: 0px;
@@ -117,16 +121,17 @@ body {
   font-style: normal;
 }
 .wrap {
-  width: 1366px;
+  max-width: 1366px;
   margin: 0 auto;
+  /* overflow: hidden; */
 }
 .content-wrap {
-  width: 1222px;
-  margin: 0 auto;
+  max-width: 1222px;
+  margin-left: 72px;
 }
 /* main start */
 .main {
-  width: 1366px;
+  width: 100%;
   min-height: 700px;
   background-image: url(./img/main-background.jpg);
   background-size: cover;
@@ -135,7 +140,6 @@ body {
 
 .wrap-logo {
   padding-top: 26px;
-  display: flex;
 }
 .content-wrap > p {
   max-width: 542px;
@@ -208,7 +212,7 @@ body {
 
 /* running-line start */
 .running-line {
-  width: 1366px;
+  width: 100%;
   display: flex;
   background-color: #f54932;
   overflow: hidden;
@@ -302,7 +306,9 @@ body {
   display: flex;
   /* align-items: flex-start; */
 }
-
+.info-chess-session__pic {
+  object-fit: contain;
+}
 .aside-table {
   width: 704px;
   margin-top: 57px;
@@ -417,9 +423,9 @@ td + td {
 }
 
 .grid-item {
-  position: relative;
   display: flex;
-  background: rgb(239, 227, 209);
+  /* background: rgb(239, 227, 209); */
+  background-image: url(./img/bg.jpg);
   padding: 20px;
 }
 .number-item {
@@ -448,22 +454,23 @@ td + td {
 }
 
 .text-item-airplane {
+  position: relative;
   width: 446px;
 }
 .grid-item-pic {
   position: absolute;
   padding-top: 20px;
-  left: 465px;
-  bottom: 0;
+  left: 92%;
+  bottom: -20px;
 }
 
-.grid-item-2-3 {
+.grid-item-7 {
   margin-left: 5px;
   grid-row: 3 / span 1;
   grid-column: 2 / span 2;
 }
 
-.grid-item-3-3 {
+.grid-item-3 {
   grid-row: 1 / span 2;
   grid-column: 3 / span 1;
 }
@@ -557,7 +564,7 @@ td + td {
   background: rgb(239, 227, 209);
 }
 .footer-text {
-  padding: 40px 72px 72px 72px ;
+  padding: 40px 72px 72px 72px;
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
@@ -565,3 +572,428 @@ td + td {
   text-align: left;
 }
 /* footer end */
+
+@media screen and (max-width: 1334px) {
+  .info-chess {
+    padding: 20px;
+  }
+  .text-item,
+  .running-line,
+  .aside-table {
+    width: 100%;
+  }
+  .text-item-airplane {
+    width: 53%;
+  }
+  .stages-transformation,
+  .participants {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 80px;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .content-wrap > p {
+    font-family: Merriweather;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .main-content-4,
+  .aside-table__link-admin,
+  .source-of-wealth {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0px;
+    top: 46px;
+    left: 270px;
+  }
+
+  .info-lecture__desc,
+  .aside-desc {
+    font-family: Merriweather;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .stages-transformation-title,
+  .participants-head-title {
+    font-family: Merriweather;
+    font-size: 46px;
+    line-height: 46px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .running-line-content {
+    font-family: Merriweather;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: right;
+  }
+
+  .text-item-airplane {
+    width: 52%;
+  }
+
+  .text-item {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+  .participants-item {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .info-lecture {
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .info-chess-session {
+    padding-top: 30px;
+    max-width: 764px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .grid-wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-item-3 {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .grid-item-5 {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .grid-item-4 {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  .grid-item-6 {
+    grid-row: 3;
+    grid-column: 2;
+  }
+  .grid-item-7 {
+    grid-row: 4;
+    grid-column: 1 / span 2;
+  }
+  .grid-item-pic {
+    bottom: -33px;
+  }
+
+  .lecture-visit-description {
+    display: block;
+    padding-top: 261px;
+  }
+
+  .info-lecture__wrap-pic {
+    position: absolute;
+  }
+  .stages-transformation {
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 764px;
+  }
+  .participants {
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 764px;
+  }
+  .info-chess-session__pic {
+    max-height: 402px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    display: flex;
+    justify-content: center;
+  }
+  .content-wrap {
+    margin-left: 0;
+  }
+  .content-wrap > p {
+    font-family: Merriweather;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0px;
+  }
+  .btn-block {
+    flex-direction: column;
+    max-width: 335px;
+  }
+  .btn {
+    width: 100%;
+  }
+
+  .button-right {
+    margin-top: 14px;
+  }
+  .info-lecture__desc,
+  .aside-desc {
+    margin: 0 auto;
+    max-width: 560px;
+  }
+  .info-chess-session,
+  .info-lecture {
+    margin: 0;
+  }
+
+  .left-column-table,
+  td + td {
+    border-left: none;
+  }
+
+  .aside-table tr {
+    margin-bottom: 10px; /* Добавляем отступ между блоками */
+  }
+
+  /* .aside-table td {
+    display: block;
+  } */
+
+  .right-column-table {
+    font-weight: bold; /* Чтобы выделить заголовки жирным */
+  }
+
+  .participants {
+    position: relative;
+    padding-bottom: 175px;
+  }
+
+  .participants-list {
+    justify-content: center;
+  }
+  .participants-head-button {
+    position: absolute;
+    bottom: 101px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .stages-transformation-title,
+  .participants-head-title {
+    font-size: 36px;
+  }
+  .source-of-wealth {
+    left: 0;
+    top: 108%;
+  }
+  .grid-wrap {
+    margin-top: 148px;
+    display: flex;
+    justify-content: center;
+  }
+  .text-item {
+    max-width: 460px;
+  }
+  .grid-item {
+    padding-top: 62px;
+    max-width: 560px;
+    flex-shrink: 0;
+  }
+  .grid-item-2,
+  .grid-item-5 {
+    padding-top: 28px;
+  }
+
+  .wrap-item-block-1,
+  .wrap-item-block-2 {
+    background-image: url(./img/bg.jpg);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .wrap {
+    width: 375px;
+  }
+  .main {
+    min-height: 812px;
+    background-position: 0;
+    background-image: url(./img/main-background-425.png);
+    background-size: auto;
+    /* overflow: hidden; */
+  }
+
+  .wrap-logo {
+    max-width: 213px;
+    padding-top: 18px;
+  }
+
+  .main-content-1 {
+    padding-top: 40px;
+  }
+  .main-content-2 {
+    padding-left: 63px;
+  }
+  .main-content-3 {
+    padding-left: 30px;
+  }
+  .main-content-4 {
+    text-align: left;
+  }
+
+  .btn-block {
+    padding-top: 32px;
+  }
+  .btn {
+    padding: 0 43px;
+    height: 47px;
+  }
+  .content-wrap {
+    padding-left: 20px;
+  }
+
+  .running-line-wrap-1,
+  .running-line-wrap-2 {
+    padding: 10px 0;
+  }
+
+  .running-line-top {
+    top: 774px;
+    position: absolute;
+  }
+
+  .info-lecture {
+    justify-content: left;
+  }
+  .info-chess-session {
+    padding-top: 22px;
+  }
+  .info-chess {
+    padding: 0;
+    margin-top: 48px;
+  }
+  .info-lecture {
+    padding-left: 20px;
+  }
+
+  .info-chess-session__pic {
+    max-height: max-content;
+  }
+  .info-chess-session__aside {
+    padding-top: 18px;
+    padding-left: 20px;
+  }
+
+  .aside-table {
+    margin-top: 45px;
+  }
+
+  .left-column-table {
+    display: block;
+    padding-bottom: 12px;
+    border-bottom: none;
+  }
+  .right-column-table {
+    display: block;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 14px;
+  }
+
+  /* .row-table {
+    max-width: 225px;
+    display: inline;
+    justify-content: left;
+  } */
+  .row-table-wrap {
+    position: relative;
+    max-width: 225px;
+    /* display: inline; */
+    /* justify-content: left; */
+  }
+
+  .row-table-top {
+    width: 100%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #d0d0d0;
+  }
+  .row-table-bottom {
+    position: absolute;
+    left: 153px;
+    top: 16px;
+    border: none;
+    padding: 0;
+  }
+  .aside-table__link-admin {
+    margin-top: 27px;
+  }
+
+  .stages-transformation {
+    position: relative;
+    margin-top: 100px;
+  }
+  .stages-transformation-title,
+  .participants-head-title {
+    line-height: 40px;
+  }
+  .grid-wrap {
+    margin-top: 202px;
+    justify-content: left;
+  }
+  .wrap-item-block-1,
+  .wrap-item-block-2 {
+    min-height: 300px;
+  }
+  .text-item {
+    width: 239px;
+  }
+
+  .grid-item {
+    min-width: 335px;
+  }
+  .grid-item-2,
+  .grid-item-5 {
+    padding-top: 8px;
+  }
+  .text-item-airplane {
+    position: static;
+  }
+  .grid-item-pic {
+    bottom: 266px;
+    left: 20px;
+  }
+
+  .participants {
+    margin-top: 145px;
+  }
+
+  .participants-list {
+    margin-top: 39px;
+  }
+  .participant-status {
+    padding-bottom: 21px;
+  }
+
+  .btn-arrow-left,
+  .btn-arrow-right {
+    width: 34px;
+    height: 36px;
+  }
+  .count-participants {
+    padding: 8px 12px;
+  }
+  .footer-text {
+    padding: 40px 20px 60px 20px;
+  }
+}
