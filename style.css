@@ -892,6 +892,7 @@ td + td {
     max-height: max-content;
   }
   .info-chess-session__aside {
+    position: relative;
     padding-top: 18px;
     padding-left: 20px;
   }
@@ -912,16 +913,9 @@ td + td {
     padding-bottom: 14px;
   }
 
-  /* .row-table {
-    max-width: 225px;
-    display: inline;
-    justify-content: left;
-  } */
   .row-table-wrap {
-    position: relative;
+    /* position: relative; */
     max-width: 225px;
-    /* display: inline; */
-    /* justify-content: left; */
   }
 
   .row-table-top {
@@ -931,8 +925,8 @@ td + td {
   }
   .row-table-bottom {
     position: absolute;
-    left: 153px;
-    top: 16px;
+    left: 172px;
+    bottom: 178px;
     border: none;
     padding: 0;
   }
