@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid red;
-} */
+}
 
 /* reset start  */
 * {
@@ -824,6 +824,8 @@ td + td {
 
 @media screen and (max-width: 425px) {
   .wrap {
+    overflow: hidden;
+    position: relative;
     width: 375px;
   }
   .main {
@@ -831,7 +833,6 @@ td + td {
     background-position: 0;
     background-image: url(./img/main-background-425.png);
     background-size: auto;
-    /* overflow: hidden; */
   }
 
   .wrap-logo {
@@ -987,8 +988,8 @@ td + td {
 
   .btn-arrow-left,
   .btn-arrow-right {
-    width: 34px;
-    height: 36px;
+    width: 36px;
+    height: 35px;
   }
   .count-participants {
     padding: 8px 12px;
