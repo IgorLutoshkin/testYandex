@@ -123,7 +123,7 @@ body {
 .wrap {
   max-width: 1366px;
   margin: 0 auto;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .content-wrap {
   max-width: 1222px;
@@ -131,7 +131,7 @@ body {
 }
 /* main start */
 .main {
-  width: 100%;
+  width: 101%;
   min-height: 700px;
   background-image: url(./img/main-background.jpg);
   background-size: cover;
@@ -276,7 +276,7 @@ body {
 .info-lecture {
   margin-left: 72px;
   display: flex;
-  gap: 68px;
+  gap: 65px;
   /* justify-content: space-between; */
   align-items: center;
 }
@@ -385,7 +385,7 @@ td + td {
 /* stages-of-transformation start */
 .stages-transformation {
   width: 1222px;
-  margin-top: 166px;
+  margin-top: 169px;
   margin-left: 72px;
 }
 .stages-transformation-wrap {
@@ -444,7 +444,7 @@ td + td {
   letter-spacing: 0px;
 }
 .text-item {
-  width: 302px;
+  width: 315px;
   padding-left: 16px;
   font-size: 20px;
   font-weight: 500;
@@ -480,8 +480,8 @@ td + td {
 .participants {
   width: 1222px;
   margin-left: 72px;
-  margin-top: 200px;
-  margin-bottom: 140px;
+  margin-top: 201px;
+  margin-bottom: 138px;
 }
 .participants-head {
   display: flex;
@@ -868,6 +868,10 @@ td + td {
   .running-line-wrap-2 {
     padding: 10px 0;
   }
+  .running-line-wrap-1 {
+    animation: marquee1 40s infinite linear;
+    animation-delay: 0s;
+  }
 
   .running-line-top {
     top: 774px;
@@ -941,6 +945,9 @@ td + td {
   .stages-transformation-title,
   .participants-head-title {
     line-height: 40px;
+  }
+  .source-of-wealth {
+    max-width: max-content;
   }
   .grid-wrap {
     margin-top: 202px;
