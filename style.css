@@ -202,6 +202,7 @@ body {
 .button-left:hover {
   color: rgb(31, 31, 31);
   background: rgb(251, 206, 81);
+  transition: 0.3s;
 }
 .button-right:hover {
   color: rgb(255, 255, 255);
@@ -491,9 +492,15 @@ td + td {
   justify-content: space-between;
   align-items: center;
 }
+
 .participants-head-button {
   /* max-width: 151px; */
   display: flex;
+}
+.participant-about-btn:hover {
+  color: #ffffff;
+  background: #3057a2;
+  transition: 0.3s;
 }
 .btn-arrow-left,
 .btn-arrow-right {
@@ -501,6 +508,12 @@ td + td {
   height: 44px;
   border-radius: 50%;
   background-color: #313131;
+}
+
+.btn-arrow-left:hover,
+.btn-arrow-right:hover {
+  transition: 0.3s;
+  background: rgb(251, 206, 81);
 }
 .arrow-right {
   transform: rotate(180deg);
@@ -1002,6 +1015,10 @@ td + td {
     display: block;
     margin-left: 16px;
   }
+
+  .btn-grid-left:hover,
+  .btn-grid-right:hover {
+  }
   /*  */
 
   .participants {
@@ -1025,10 +1042,6 @@ td + td {
     width: 57px;
     white-space: nowrap;
     padding: 8px 12px;
-    /*  padding-left: 12px;
-    padding-right: 10px;
-    padding-top: 8px;
-    padding-bottom: 8px; */
   }
 
   .participants-head-button {
@@ -1036,7 +1049,6 @@ td + td {
   }
   .footer-text {
     width: 98%;
-    /* max-width: 335px; */
     padding: 40px 20px 60px 20px;
   }
 }
