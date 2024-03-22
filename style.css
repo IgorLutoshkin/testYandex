@@ -665,8 +665,9 @@ td + td {
   }
 
   .info-chess-session {
+    width: 100%;
     padding-top: 30px;
-    max-width: 764px;
+    /* max-width: 764px; */
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -972,12 +973,36 @@ td + td {
     position: static;
   }
   .grid-item-pic {
-    bottom: 266px;
+    bottom: 330px;
     left: 20px;
   }
 
+  /*  */
+  .participants-grid-button {
+    display: flex;
+    align-items: center;
+    min-width: 178px;
+    padding-left: 79px;
+    padding-top: 27px;
+  }
+  .circle-default {
+    padding-left: 6px;
+  }
+  .circle-first {
+    padding: 0;
+  }
+  .btn-grid-left {
+    display: block;
+    margin-right: 16px;
+  }
+  .btn-grid-right {
+    display: block;
+    margin-left: 16px;
+  }
+  /*  */
+
   .participants {
-    margin-top: 145px;
+    margin-top: 81px;
   }
 
   .participants-list {
@@ -990,10 +1015,21 @@ td + td {
   .btn-arrow-left,
   .btn-arrow-right {
     width: 36px;
-    height: 35px;
+    height: 36px;
   }
   .count-participants {
+    display: block;
+    width: 57px;
+    white-space:nowrap;
     padding: 8px 12px;
+    /*  padding-left: 12px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px; */
+  }
+
+  .participants-head-button {
+    display: flex;
   }
   .footer-text {
     padding: 40px 20px 60px 20px;
