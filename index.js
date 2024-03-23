@@ -1,4 +1,4 @@
-const screenWidthThreshold = 768;
+const screenWidthThreshold = 767;
 
 const list = document.querySelector(".grid-wrap");
 const item1 = document.querySelector(".grid-item-1");
@@ -72,3 +72,7 @@ function moveItemsBasedOnScreenWidth_2() {
 moveItemsBasedOnScreenWidth_2();
 
 window.addEventListener("resize", moveItemsBasedOnScreenWidth_2);
+
+
+/*  */
+

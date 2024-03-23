@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid red;
-} */
+}
 
 /* reset start  */
 * {
@@ -739,7 +739,7 @@ td + td {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .main {
     display: flex;
     justify-content: center;
@@ -833,6 +833,31 @@ td + td {
     padding-top: 28px;
   }
 
+  /*  */
+  .participants-grid-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 178px;
+    padding-top: 27px;
+  }
+  .circle-default {
+    padding-left: 6px;
+  }
+  .circle-first {
+    padding: 0;
+  }
+  .btn-grid-left {
+    display: block;
+    margin-right: 16px;
+  }
+  .btn-grid-right {
+    display: block;
+    margin-left: 16px;
+  }
+
+  /*  */
+
   .wrap-item-block-1,
   .wrap-item-block-2 {
     background-image: url(./img/bg.jpg);
@@ -843,7 +868,7 @@ td + td {
   .wrap {
     overflow: hidden;
     position: relative;
-    width: 105%;
+    width: 375px;
   }
   .main {
     min-height: 812px;
@@ -992,34 +1017,6 @@ td + td {
     bottom: 330px;
     left: 20px;
   }
-
-  /*  */
-  .participants-grid-button {
-    display: flex;
-    align-items: center;
-    min-width: 178px;
-    padding-left: 79px;
-    padding-top: 27px;
-  }
-  .circle-default {
-    padding-left: 6px;
-  }
-  .circle-first {
-    padding: 0;
-  }
-  .btn-grid-left {
-    display: block;
-    margin-right: 16px;
-  }
-  .btn-grid-right {
-    display: block;
-    margin-left: 16px;
-  }
-
-  .btn-grid-left:hover,
-  .btn-grid-right:hover {
-  }
-  /*  */
 
   .participants {
     margin-top: 81px;
