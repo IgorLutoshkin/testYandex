@@ -486,6 +486,7 @@ td + td {
   margin-left: 72px;
   margin-top: 201px;
   margin-bottom: 138px;
+  overflow: hidden;
 }
 .participants-head {
   display: flex;
@@ -535,15 +536,25 @@ td + td {
   text-align: left;
   text-transform: uppercase;
 }
-
+picture {
+}
 .participants-list {
+  width: 1242px;
+  position: relative;
+  left: 0;
+  margin: 0 auto;
   margin-top: 60px;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
 }
 .participants-item {
+  height: 462px;
+  /* max-width: 394px; */
   padding: 0 37px;
   text-align: center;
+  flex-shrink: 0;
+}
+.participants-avatar {
 }
 .participant-name {
   padding-top: 28px;
