@@ -167,6 +167,7 @@ function rightImage() {
   let rightImg = activeParticipants + 1;
   if (rightImg >= data.length) rightImg = 0;
   listElement.append(render(rightImg));
+  return rightImg;
 }
 rightImage();
 /*  */
@@ -176,6 +177,7 @@ function leftImage() {
   let leftImg = activeParticipants - 1;
   if (leftImg < 0) leftImg = data.length - 1;
   listElement.prepend(render(leftImg));
+  return leftImg;
 }
 leftImage();
 /*  */
@@ -184,23 +186,20 @@ leftImage();
 leftBtn.addEventListener("click", () => {
   activeParticipants--;
   if (activeParticipants < 0) activeParticipants = data.length - 1;
-
+  const addWidth = document.querySelector(".participants-item").clientWidth;
   const containerList = document.querySelector(".participants-list");
-  const newElement = render(activeParticipants);
-
+  const itemElement = document.querySelector(".participants-item");
+  leftImage();
   animate({
-    duration: 1500,
+    duration: 1000,
     draw: function (progress) {
-      const newPosition = widthOffset * progress;
-
-      containerList.style.transform = `translateX(${newPosition}px)`;
-      newElement.style.transform = `translateX(${newPosition}px)`; // Изменено на обратное движение
+      const newPosition = widthOffset * (1 - progress);
+      console.log(newPosition);
+      containerList.style.transform = `translateX(-${newPosition}px)`;
+      itemElement.style.width = addWidth * progress;
     },
     removeElement: containerList.lastChild,
-    insertElement: newElement,
   });
-
-  leftImage();
 });
 
 rightBtn.addEventListener("click", () => {
@@ -208,17 +207,14 @@ rightBtn.addEventListener("click", () => {
   if (activeParticipants >= data.length) activeParticipants = 0;
 
   const containerList = document.querySelector(".participants-list");
-  const newElement = render((activeParticipants + 1) % data.length);
+  rightImage();
   animate({
-    duration: 1500,
+    duration: 1000,
     draw: function (progress) {
       const newPosition = -widthOffset * progress;
-
       containerList.style.transform = `translateX(${newPosition}px)`;
-      newElement.style.transform = `translateX(-${newPosition}px)`;
     },
     removeElement: containerList.firstChild,
-    insertElement: newElement,
   });
 });
 /*  */
@@ -234,8 +230,7 @@ const animate = ({ duration, draw, removeElement }) => {
       requestAnimationFrame(animate);
     } else {
       removeElement.remove();
-
-      document.querySelector(".participants-list").style.transform = ""; // Reset transform
+      document.querySelector(".participants-list").style.transform = "";
     }
   });
 };

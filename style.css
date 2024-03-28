@@ -1,7 +1,7 @@
-* {
+/* * {
   outline: 1px solid red;
 }
-
+ */
 /* reset start  */
 * {
   padding: 0px;
@@ -539,7 +539,6 @@ td + td {
 picture {
 }
 .participants-list {
-  width: 1242px;
   position: relative;
   left: 0;
   margin: 0 auto;
@@ -548,9 +547,10 @@ picture {
   gap: 20px;
 }
 .participants-item {
-  height: 462px;
+  width: 394px;
+  /* height: 462px; */
   /* max-width: 394px; */
-  padding: 0 37px;
+  /* padding: 0 37px; */
   text-align: center;
   flex-shrink: 0;
 }
