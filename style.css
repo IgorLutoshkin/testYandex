@@ -1,7 +1,7 @@
 /* * {
   outline: 1px solid red;
-}
- */
+} */
+
 /* reset start  */
 * {
   padding: 0px;
@@ -539,7 +539,7 @@ td + td {
 picture {
 }
 .participants-list {
-  width: 1222px;
+  width: 100%;
   position: relative;
   left: 0;
   margin: 0 auto;
@@ -550,8 +550,6 @@ picture {
 }
 .participants-item {
   width: 394px;
-  /* max-width: 394px; */
-  height: 462px;
   padding: 0 37px;
   text-align: center;
   flex-shrink: 0;
@@ -622,6 +620,11 @@ picture {
     padding: 20px;
   }
 }
+@media screen and (max-width: 1238px) {
+  .participants-item {
+    width: 335px;
+  }
+}
 @media screen and (max-width: 1180px) {
   .content-wrap > p {
     font-family: Merriweather;
@@ -685,8 +688,14 @@ picture {
     padding: 0 10px;
   }
 }
-
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1126px) {
+  .participants {
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 764px;
+  }
+}
+@media screen and (max-width: 1072px) {
   .info-lecture {
     position: relative;
     flex-wrap: wrap;
@@ -742,10 +751,12 @@ picture {
     margin-top: 50px;
     max-width: 764px;
   }
-  .participants {
-    margin: 0 auto;
-    margin-top: 50px;
-    max-width: 764px;
+
+  .participants-list {
+    gap: 25px;
+  }
+  .participants-item {
+    width: 335px;
   }
   .info-chess-session__pic {
     max-height: 402px;
@@ -810,9 +821,6 @@ picture {
     padding-bottom: 175px;
   }
 
-  .participants-list {
-    justify-content: center;
-  }
   .participants-head-button {
     position: absolute;
     bottom: 101px;
@@ -1036,6 +1044,7 @@ picture {
   }
 
   .participants-list {
+    gap: 0;
     margin-top: 39px;
   }
   .participant-status {
