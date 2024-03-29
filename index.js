@@ -189,19 +189,22 @@ leftBtn.addEventListener("click", () => {
   const addWidth = document.querySelector(".participants-item").clientWidth;
   const containerList = document.querySelector(".participants-list");
   const itemElement = document.querySelector(".participants-item");
-  leftImage();
+  console.log(addWidth);
+  let newElement = leftImage();
   animate({
     duration: 1000,
     draw: function (progress) {
-      const newPosition = widthOffset * (1 - progress);
-      console.log(newPosition);
+      const newPosition = addWidth * (1 - progress);
+      // console.log(newPosition);
       containerList.style.transform = `translateX(-${newPosition}px)`;
-      itemElement.style.width = addWidth * progress;
+      newElement = itemElement.style.width = "-" + addWidth * progress + "px";
     },
     removeElement: containerList.lastChild,
   });
 });
-
+/*  */
+/*  */
+/*  */
 rightBtn.addEventListener("click", () => {
   activeParticipants++;
   if (activeParticipants >= data.length) activeParticipants = 0;

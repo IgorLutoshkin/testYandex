@@ -539,18 +539,20 @@ td + td {
 picture {
 }
 .participants-list {
+  width: 1222px;
   position: relative;
   left: 0;
   margin: 0 auto;
   margin-top: 60px;
   display: flex;
   gap: 20px;
+  /* justify-content: space-between; */
 }
 .participants-item {
   width: 394px;
-  /* height: 462px; */
   /* max-width: 394px; */
-  /* padding: 0 37px; */
+  height: 462px;
+  padding: 0 37px;
   text-align: center;
   flex-shrink: 0;
 }
