@@ -211,14 +211,16 @@ rightBtn.addEventListener("click", () => {
 
   const containerList = document.querySelector(".participants-list");
   const addWidth = document.querySelector(".participants-item").clientWidth;
-  const itemElement = document.querySelector(".participants-item");
-  let newElement = rightImage();
+
+  const computedStyles = window.getComputedStyle(containerList);
+  const gapValue = computedStyles.getPropertyValue("gap");
+
+  rightImage();
   animate({
     duration: 1000,
     draw: function (progress) {
-      const newPosition = -addWidth * progress;
+      const newPosition = -(addWidth + parseFloat(gapValue)) * progress;
       containerList.style.transform = `translateX(${newPosition}px)`;
-      // newElement = itemElement.style.width = '-' + addWidth * progress + "px";
     },
     removeElement: containerList.firstChild,
   });
