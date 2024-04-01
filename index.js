@@ -188,16 +188,14 @@ leftBtn.addEventListener("click", () => {
   if (activeParticipants < 0) activeParticipants = data.length - 1;
   const addWidth = document.querySelector(".participants-item").clientWidth;
   const containerList = document.querySelector(".participants-list");
-  const itemElement = document.querySelector(".participants-item");
-  console.log(addWidth);
-  let newElement = leftImage();
+  const computedStyles = window.getComputedStyle(containerList);
+  const gapValue = computedStyles.getPropertyValue("gap");
+  leftImage();
   animate({
     duration: 1000,
     draw: function (progress) {
-      const newPosition = addWidth * (1 - progress);
-      // console.log(newPosition);
+      const newPosition = (addWidth + parseFloat(gapValue)) * (1 - progress);
       containerList.style.transform = `translateX(-${newPosition}px)`;
-      newElement = itemElement.style.width = "-" + addWidth * progress + "px";
     },
     removeElement: containerList.lastChild,
   });
