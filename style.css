@@ -885,6 +885,11 @@ picture {
   }
 }
 
+@media screen and (max-width: 729px) {
+  .participants-item{
+    width: 100%;
+  }
+}
 @media screen and (max-width: 425px) {
   .wrap {
     overflow: hidden;
