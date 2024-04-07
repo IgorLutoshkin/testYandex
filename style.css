@@ -516,6 +516,13 @@ td + td {
   transition: 0.3s;
   background: rgb(251, 206, 81);
 }
+/* Сбросить эффект наведения на сенсорных устройствах */
+.btn-arrow-left:active,
+.btn-arrow-right:active {
+  transition: none;
+  background-color: #313131;
+}
+
 .arrow-right {
   transform: rotate(180deg);
 }
@@ -886,7 +893,7 @@ picture {
 }
 
 @media screen and (max-width: 729px) {
-  .participants-item{
+  .participants-item {
     width: 100%;
   }
 }

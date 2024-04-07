@@ -187,7 +187,12 @@ leftImage();
 /*  */
 /*  */
 /* ********************************************** */
-leftBtn.addEventListener("click", () => {
+
+function leftScroll() {
+  //защита от  многократного нажатия на кнопку
+  if (!flag) return;
+  flag = !flag;
+
   activeParticipants--;
   if (activeParticipants < 0) activeParticipants = data.length - 1;
   const addWidth = document.querySelector(".participants-item").clientWidth;
@@ -204,11 +209,24 @@ leftBtn.addEventListener("click", () => {
     },
     removeElement: containerList.lastChild,
   });
+}
+
+leftBtn.addEventListener("click", () => {
+  clearInterval(interval);
+  leftScroll();
+  interval = setInterval(function () {
+    scrollRight();
+  }, 4000);
 });
 /*  */
 /*  */
 /*  */
-rightBtn.addEventListener("click", () => {
+
+function rightScroll() {
+  //защита от  многократного нажатия на кнопку
+  if (!flag) return;
+  flag = !flag;
+
   activeParticipants++;
   if (activeParticipants >= data.length) activeParticipants = 0;
 
@@ -228,6 +246,20 @@ rightBtn.addEventListener("click", () => {
     },
     removeElement: containerList.firstChild,
   });
+}
+
+let interval;
+
+interval = setInterval(function () {
+  scrollRight();
+}, 4000);
+
+rightBtn.addEventListener("click", () => {
+  clearInterval(interval);
+  rightScroll();
+  interval = setInterval(function () {
+    scrollRight();
+  }, 4000);
 });
 /*  */
 /*  */
@@ -243,6 +275,8 @@ const animate = ({ duration, draw, removeElement }) => {
     } else {
       removeElement.remove();
       document.querySelector(".participants-list").style.transform = "";
+      //защита от  многократного нажатия на кнопку
+      flag = true;
     }
   });
 };
@@ -285,14 +319,14 @@ function leftCount(activeParticipants) {
     let countElementPage = listElement.childElementCount;
 
     if (rangeStart <= countElementPage) {
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
 
     if (rangeStart > data.length) {
-      counterElement.innerText = rangeStart - data.length + "/" + data.length;
+      counterElement.innerText = rangeStart - data.length + " / " + data.length;
     }
     if (rangeStart <= data.length) {
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
   }
   /* экраны от 1126, когда отображается 2 участника */
@@ -300,14 +334,14 @@ function leftCount(activeParticipants) {
     let rangeStart = activeParticipants + 1;
 
     if (rangeStart <= countElementPage) {
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
 
     if (rangeStart > data.length) {
-      counterElement.innerText = rangeStart - data.length + "/" + data.length;
+      counterElement.innerText = rangeStart - data.length + " / " + data.length;
     }
     if (rangeStart <= data.length) {
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
   }
 
@@ -317,15 +351,15 @@ function leftCount(activeParticipants) {
     let rangeStart = activeParticipants;
 
     if (rangeStart <= countElementPage) {
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
 
     if (rangeStart < data.length) {
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
     if (rangeStart === 0) {
       rangeStart = data.length;
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
   }
 }
@@ -346,21 +380,21 @@ function rightCount(activeParticipants) {
     rangeEnd = data.length;
   }
 
-  counterElement.innerText = rangeEnd + "/" + data.length;
+  counterElement.innerText = rangeEnd + " / " + data.length;
 
   /* экраны от 1126, когда отображается 2 участника */
   if (window.innerWidth <= screenWidth_1) {
     let rangeStart = activeParticipants + 1;
 
     if (rangeStart <= countElementPage) {
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
 
     if (rangeStart > data.length) {
-      counterElement.innerText = rangeStart - data.length + "/" + data.length;
+      counterElement.innerText = rangeStart - data.length + " / " + data.length;
     }
     if (rangeStart <= data.length) {
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
   }
 
@@ -370,15 +404,15 @@ function rightCount(activeParticipants) {
     let rangeStart = activeParticipants;
 
     if (rangeStart <= countElementPage) {
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
 
     if (rangeStart < data.length) {
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
     if (rangeStart === 0) {
       rangeStart = data.length;
-      counterElement.innerText = rangeStart + "/" + data.length;
+      counterElement.innerText = rangeStart + " / " + data.length;
     }
   }
 }
