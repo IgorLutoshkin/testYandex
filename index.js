@@ -251,7 +251,7 @@ function rightScroll() {
 let interval;
 
 interval = setInterval(function () {
-  scrollRight();
+  rightScroll();
 }, 4000);
 
 rightBtn.addEventListener("click", () => {
