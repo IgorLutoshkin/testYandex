@@ -215,7 +215,7 @@ leftBtn.addEventListener("click", () => {
   clearInterval(interval);
   leftScroll();
   interval = setInterval(function () {
-    scrollRight();
+    rightScroll();
   }, 4000);
 });
 /*  */
@@ -258,7 +258,7 @@ rightBtn.addEventListener("click", () => {
   clearInterval(interval);
   rightScroll();
   interval = setInterval(function () {
-    scrollRight();
+    rightScroll();
   }, 4000);
 });
 /*  */
