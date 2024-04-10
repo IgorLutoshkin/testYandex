@@ -416,3 +416,73 @@ function rightCount(activeParticipants) {
     }
   }
 }
+
+/* ------------------------------------------ */
+
+let offset = 0;
+const gridWrap = document.querySelector(".grid-wrap");
+const gridItem = document.querySelector(".grid-item");
+// console.log(gridItem.clientWidth);
+// console.log(gridWrap.childElementCount);
+let widthItem = gridItem.clientWidth; // ширина элемента
+let numberItem = gridWrap.childElementCount; // количество элементов
+
+const buttonElementRight = document.querySelector(".btn-grid-right");
+const buttonElementLeft = document.querySelector(".btn-grid-left");
+/*  */
+const circleBlock = document.querySelector(".block-pagination-circles");
+let numberCircle = circleBlock.childElementCount; // количество элементов
+// console.log(numberCircle);
+
+/*  */
+buttonElementRight.addEventListener("click", () => {
+  if (offset >= (numberItem - 2) * (widthItem + 20)) {
+    offset = (numberItem - 2) * (widthItem + 20);
+  }
+  offset = offset + widthItem + 20;
+  gridWrap.style.left = -offset + "px";
+});
+
+/*  */
+buttonElementLeft.addEventListener("click", () => {
+  if (offset <= 0) {
+    offset = widthItem + 20;
+  }
+  offset = offset - widthItem - 20;
+  gridWrap.style.left = -offset + "px";
+});
+
+let gridItemsArr = Array.from(gridWrap.children);
+
+for (let index in gridItemsArr) {
+  console.log(`Index: ${index}, Element:`, gridItemsArr[index]);
+}
+/* ++++++++++++++++++++++ */
+const circleElement = document.querySelectorAll(".block-pagination-circles span");
+const leftButton = document.querySelector(".btn-arrow-left");
+const rightButton = document.querySelector(".btn-arrow-right");
+
+let currentIndex = 0;
+
+// Функция обновления активного круга в пагинации
+function updatePagination(index) {
+  circleElement.forEach((circle, i) => {
+    if (i === index) {
+      circle.classList.add("active");
+    } else {
+      circle.classList.remove("active");
+    }
+  });
+}
+
+// Обработчик события для кнопки влево
+leftButton.addEventListener("click", () => {
+  currentIndex = Math.max(currentIndex - 1, 0);
+  updatePagination(currentIndex);
+});
+
+// Обработчик события для кнопки вправо
+rightButton.addEventListener("click", () => {
+  currentIndex = Math.min(currentIndex + 1, circleElement.length - 1);
+  updatePagination(currentIndex);
+});
