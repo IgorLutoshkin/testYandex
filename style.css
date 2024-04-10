@@ -852,6 +852,7 @@ picture {
     left: 0;
     margin-top: 148px;
     display: flex;
+    transition: all ease 1s;
   }
   .text-item {
     max-width: 460px;
@@ -881,7 +882,7 @@ picture {
     margin-left: 0;
   }
 
-  .block-pagination-circles{
+  .block-pagination-circles {
     width: 74px;
     display: flex;
     justify-content: space-between;
@@ -1053,6 +1054,21 @@ picture {
     position: relative;
     margin-top: 100px;
   }
+  /* Изображение будет по верх всего контента */
+  .stages-transformation::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/airplane-1025.png);
+    background-repeat: no-repeat;
+    z-index: 10;
+    background-position: 19px 214px;
+    pointer-events: none; /* Игнорируем события мыши для этого псевдоэлемента */
+  }
+
   .stages-transformation-title,
   .participants-head-title {
     line-height: 40px;
@@ -1079,12 +1095,9 @@ picture {
   .grid-item-5 {
     padding-top: 8px;
   }
-  .text-item-airplane {
-    position: static;
-  }
+
   .grid-item-pic {
-    bottom: 246px;
-    left: 0;
+    display: none;
   }
 
   .participants {
