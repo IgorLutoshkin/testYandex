@@ -436,6 +436,7 @@ let numberCircle = circleBlock.childElementCount; // количество эле
 
 /*  */
 buttonElementRight.addEventListener("click", () => {
+  buttonElementRight.style.backgroundColor = "#313131";
   if (offset >= (numberItem - 2) * (widthItem + 20)) {
     offset = (numberItem - 2) * (widthItem + 20);
   }
@@ -452,17 +453,36 @@ buttonElementLeft.addEventListener("click", () => {
   gridWrap.style.left = -offset + "px";
 });
 
-let gridItemsArr = Array.from(gridWrap.children);
+/* let gridItemsArr = Array.from(gridWrap.children);
 
 for (let index in gridItemsArr) {
   console.log(`Index: ${index}, Element:`, gridItemsArr[index]);
-}
+} */
 /* ++++++++++++++++++++++ */
-const circleElement = document.querySelectorAll(".block-pagination-circles span");
-const leftButton = document.querySelector(".btn-arrow-left");
-const rightButton = document.querySelector(".btn-arrow-right");
+const circleElement = document.querySelectorAll(
+  ".block-pagination-circles span"
+);
 
 let currentIndex = 0;
+
+// Функция обновления состояния кнопки
+function conditionButtonGrid(indexElement) {
+  circleElement.forEach((element, i) => {
+    if (indexElement === i) {
+      if (i === circleElement.length - 1) {
+        buttonElementRight.style.backgroundColor = "#D6D6D6";
+      } else {
+        buttonElementRight.style.backgroundColor = "#313131";
+      }
+
+      if (i > 0) {
+        buttonElementLeft.style.backgroundColor = "#313131";
+      } else {
+        buttonElementLeft.style.backgroundColor = "#D6D6D6";
+      }
+    }
+  });
+}
 
 // Функция обновления активного круга в пагинации
 function updatePagination(index) {
@@ -476,13 +496,15 @@ function updatePagination(index) {
 }
 
 // Обработчик события для кнопки влево
-leftButton.addEventListener("click", () => {
+buttonElementLeft.addEventListener("click", () => {
   currentIndex = Math.max(currentIndex - 1, 0);
   updatePagination(currentIndex);
+  conditionButtonGrid(currentIndex);
 });
 
 // Обработчик события для кнопки вправо
-rightButton.addEventListener("click", () => {
+buttonElementRight.addEventListener("click", () => {
   currentIndex = Math.min(currentIndex + 1, circleElement.length - 1);
   updatePagination(currentIndex);
+  conditionButtonGrid(currentIndex);
 });
