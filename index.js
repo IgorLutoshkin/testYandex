@@ -285,22 +285,22 @@ const animate = ({ duration, draw, removeElement }) => {
 /*  */
 /*  */
 window.addEventListener("resize", function () {
-  var containerWidth = document.querySelector(".participants-list").offsetWidth;
+  let containerWidth = document.querySelector(".participants-list").offsetWidth;
 
   if (window.innerWidth >= 1242) {
     // Устанавливаем gap в 20px, если ширина экрана больше или равна 1242px
     document.querySelector(".participants-list").style.gap = 20 + "px";
   } else if (window.innerWidth <= 1242 && window.innerWidth > 1170) {
     // Устанавливаем gap  от ширины контейнера, если ширина экрана между 1107px и 1242px
-    var newGap = containerWidth * 0.05;
+    let newGap = containerWidth * 0.05;
     document.querySelector(".participants-list").style.gap = newGap + "px";
   } else if (window.innerWidth <= 1126) {
     // Устанавливаем gap от ширины контейнера, если ширина экрана меньше 1126
-    var newGap = containerWidth * 0.06;
+    let newGap = containerWidth * 0.06;
     document.querySelector(".participants-list").style.gap = newGap + "px";
   } else {
     // Устанавливаем gap  от ширины контейнера во всех остальных случаях
-    var newGap = containerWidth * 0.03;
+    let newGap = containerWidth * 0.03;
     document.querySelector(".participants-list").style.gap = newGap + "px";
   }
 });
@@ -398,7 +398,7 @@ function rightCount(activeParticipants) {
     }
   }
 
-  /* экраны от 729, когда отображается 1 участни */
+  /* экраны от 729, когда отображается 1 участник */
 
   if (window.innerWidth <= screenWidth_2) {
     let rangeStart = activeParticipants;
@@ -422,17 +422,13 @@ function rightCount(activeParticipants) {
 let offset = 0;
 const gridWrap = document.querySelector(".grid-wrap");
 const gridItem = document.querySelector(".grid-item");
-// console.log(gridItem.clientWidth);
-// console.log(gridWrap.childElementCount);
 let widthItem = gridItem.clientWidth; // ширина элемента
 let numberItem = gridWrap.childElementCount; // количество элементов
-
 const buttonElementRight = document.querySelector(".btn-grid-right");
 const buttonElementLeft = document.querySelector(".btn-grid-left");
 /*  */
 const circleBlock = document.querySelector(".block-pagination-circles");
 let numberCircle = circleBlock.childElementCount; // количество элементов
-// console.log(numberCircle);
 
 /*  */
 buttonElementRight.addEventListener("click", () => {
@@ -453,11 +449,6 @@ buttonElementLeft.addEventListener("click", () => {
   gridWrap.style.left = -offset + "px";
 });
 
-/* let gridItemsArr = Array.from(gridWrap.children);
-
-for (let index in gridItemsArr) {
-  console.log(`Index: ${index}, Element:`, gridItemsArr[index]);
-} */
 /* ++++++++++++++++++++++ */
 const circleElement = document.querySelectorAll(
   ".block-pagination-circles span"
@@ -508,3 +499,25 @@ buttonElementRight.addEventListener("click", () => {
   updatePagination(currentIndex);
   conditionButtonGrid(currentIndex);
 });
+
+buttonElementRight.addEventListener("mousedown", function () {
+  buttonElementRight.style.backgroundColor = "#fff";
+});
+
+/* 111111111111111111111111111111111111111111 */
+const myBtn = document.querySelector(".button-left");
+function handleResize() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth >= 768) {
+    myBtn.addEventListener("mouseover", () => {
+      myBtn.style.background = "rgb(251, 206, 81)";
+    });
+    myBtn.addEventListener("mouseout", () => {
+      myBtn.style.background = "rgb(31, 31, 31)";
+    });
+  }
+}
+
+window.addEventListener("resize", handleResize);
+handleResize();

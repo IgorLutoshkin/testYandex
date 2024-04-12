@@ -199,11 +199,11 @@ body {
   background: rgb(255, 255, 255);
   color: rgb(31, 31, 31);
 }
-.button-left:hover {
+/* .button-left:hover {
   color: rgb(31, 31, 31);
   background: rgb(251, 206, 81);
   transition: 0.3s;
-}
+} */
 .button-right:hover {
   color: rgb(255, 255, 255);
   background: rgb(31, 31, 31);
