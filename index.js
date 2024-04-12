@@ -501,7 +501,10 @@ buttonElementRight.addEventListener("click", () => {
 });
 
 buttonElementRight.addEventListener("mousedown", function () {
-  buttonElementRight.style.backgroundColor = "#fff";
+  buttonElementRight.style.backgroundColor = "rgb(251, 206, 81)";
+});
+buttonElementLeft.addEventListener("mousedown", function () {
+  buttonElementLeft.style.backgroundColor = "rgb(251, 206, 81)";
 });
 
 /* 111111111111111111111111111111111111111111 */
