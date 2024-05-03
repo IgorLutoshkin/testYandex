@@ -1,11 +1,7 @@
-import {
-  moveItemsBasedOnScreenWidth,
-  moveItemsBasedOnScreenWidth_2,
-} from "./components/stages-transformation-grid/combiningElements/combiningElements.js";
+import { adaptiveGap } from "./components/adaptiveGap.js";
+import { listParticipant } from "./components/listParticipant/listParticipant.js";
+import { combining } from "./componentsForGrid/combiningElements.js";
 
-import { render } from "./components/participants/renderParticipants.js";
-
-
-render();
-moveItemsBasedOnScreenWidth();
-moveItemsBasedOnScreenWidth_2();
+listParticipant()
+adaptiveGap()
+combining()
