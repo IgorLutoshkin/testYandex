@@ -71,8 +71,6 @@ function moveItemsBasedOnScreenWidth_2() {
 export function combining() {
 	moveItemsBasedOnScreenWidth();
 	moveItemsBasedOnScreenWidth_2();
-	window.addEventListener("resize",
-		moveItemsBasedOnScreenWidth,
-		moveItemsBasedOnScreenWidth_2
-	);
+	window.addEventListener("resize", moveItemsBasedOnScreenWidth);
+	window.addEventListener("resize", moveItemsBasedOnScreenWidth_2);
 }
