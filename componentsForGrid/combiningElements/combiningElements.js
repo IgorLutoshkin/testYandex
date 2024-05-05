@@ -68,7 +68,7 @@ function moveItemsBasedOnScreenWidth_2() {
 }
 
 /* сращивание 1-2 и 4-5 элементов в блоки */
-export function combining() {
+export function combiningElements() {
 	moveItemsBasedOnScreenWidth();
 	moveItemsBasedOnScreenWidth_2();
 	window.addEventListener("resize", moveItemsBasedOnScreenWidth);

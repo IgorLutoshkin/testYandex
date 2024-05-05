@@ -1,4 +1,3 @@
-/* ------------------------------------------ */
 export let dataGrid = {
 	offset: 0,
 	gridWrap: document.querySelector(".grid-wrap"),
@@ -26,6 +25,7 @@ export function buttonRightScroll() {
 	dataGrid.offset = dataGrid.offset + dataGrid.widthItem + 20;
 	dataGrid.gridWrap.style.left = -dataGrid.offset + "px";
 	newCurrentRight()
+
 }
 
 export function buttonLeftScroll() {
@@ -80,6 +80,14 @@ function newCurrentRight() {
 	conditionButtonGrid(dataGrid.currentIndex);
 }
 
+
+function newWidthElement() {
+	window.addEventListener("resize", () => {
+		dataGrid.widthItem = dataGrid.gridItem.clientWidth;
+		buttonLeftScroll()
+	})
+}
+newWidthElement()
 
 // buttonElementRight.addEventListener("mousedown", function () {
 // 	buttonElementRight.style.backgroundColor = "rgb(251, 206, 81)";
