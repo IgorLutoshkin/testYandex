@@ -80,34 +80,20 @@ function newCurrentRight() {
 	conditionButtonGrid(dataGrid.currentIndex);
 }
 
-// window.addEventListener('resize', function() {
-//   let numVisibleItems = Math.floor(dataGrid.gridWrap.offsetWidth / (dataGrid.widthItem + 20));
-//   let totalItemsWidth = dataGrid.itemCount * (dataGrid.widthItem + 20) - 20; // минус 20 для учета отступов
-//   let maxOffset = totalItemsWidth - dataGrid.gridWrap.offsetWidth;
 
-//   if (dataGrid.offset > maxOffset) {
-//     dataGrid.offset = maxOffset;
-//   }
-
-//   dataGrid.gridWrap.style.left = -dataGrid.offset + "px";
-// });
-
-
-
-function newWidthElement() {
+function newOffsetResize() {
 	window.addEventListener("resize", () => {
 		dataGrid.widthItem = dataGrid.gridItem.clientWidth;
-
-		// Сброс до первого элемента
-		dataGrid.offset = 0;
-		dataGrid.currentIndex = 0;
-		updatePagination(dataGrid.currentIndex);
-		conditionButtonGrid(dataGrid.currentIndex);
-
-		dataGrid.gridWrap.style.left = -dataGrid.offset + "px";
+		if (dataGrid.offset <= 0) {
+			dataGrid.gridWrap.style.left = '';
+		} else {
+			dataGrid.gridWrap.style.left = '';
+			dataGrid.offset =( dataGrid.widthItem + 20) * dataGrid.currentIndex
+			dataGrid.gridWrap.style.left = -dataGrid.offset + "px";
+		}
 	})
 }
-newWidthElement()
+newOffsetResize()
 
 // buttonElementRight.addEventListener("mousedown", function () {
 // 	buttonElementRight.style.backgroundColor = "rgb(251, 206, 81)";
