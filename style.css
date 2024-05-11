@@ -199,11 +199,11 @@ body {
   background: rgb(255, 255, 255);
   color: rgb(31, 31, 31);
 }
-/* .button-left:hover {
+.button-left:hover {
   color: rgb(31, 31, 31);
   background: rgb(251, 206, 81);
   transition: 0.3s;
-} */
+}
 .button-right:hover {
   color: rgb(255, 255, 255);
   background: rgb(31, 31, 31);
@@ -511,11 +511,11 @@ td + td {
   background-color: #313131;
 }
 
-.btn-arrow-left:hover,
+/* .btn-arrow-left:hover,
 .btn-arrow-right:hover {
   transition: 0.3s;
   background: rgb(251, 206, 81);
-}
+} */
 
 .arrow-right {
   transform: rotate(180deg);
@@ -537,8 +537,7 @@ td + td {
   text-align: left;
   text-transform: uppercase;
 }
-picture {
-}
+
 .participants-list {
   width: 100%;
   position: relative;
@@ -765,12 +764,7 @@ picture {
 }
 
 @media screen and (max-width: 767px) {
-  /* Сбросить эффект наведения на сенсорных устройствах */
-  .btn-arrow-left:active,
-  .btn-arrow-right:active {
-    transition: none;
-    background-color: #313131;
-  }
+  
   .main {
     display: flex;
     justify-content: center;

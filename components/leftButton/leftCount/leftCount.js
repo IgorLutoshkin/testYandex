@@ -1,4 +1,4 @@
-import { data } from "../data.js";
+import { data } from "../../data.js";
 
 export function leftCount(activeParticipant) {
 	let listElement = document.querySelector(".participants-list")

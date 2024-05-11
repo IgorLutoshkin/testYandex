@@ -1,8 +1,8 @@
 import { data } from "../data.js";
-import { leftImage } from "../leftImage/leftImage.js";
-import { leftScroll } from "../leftScroll/leftScroll.js";
-import { rightImage } from "../rightImage/rightImage.js";
-import { rightScroll } from "../rightScroll/rightScroll.js";
+import { leftButton } from "../leftButton/leftButton.js";
+import { leftImage } from "../leftButton/leftImage/leftImage.js";
+import { rightButton } from "../rightButton/rightButton.js";
+import { rightImage } from "../rightButton/rightImage/rightImage.js";
 import { itemElement } from "./itemElement/itemElement.js";
 
 export function listParticipant() {
@@ -11,9 +11,11 @@ export function listParticipant() {
 	listElement.className = "participants-list";
 	container.append(listElement);
 
+	leftButton()
 	leftImage();
 	listElement.append(itemElement(data.activeParticipant));
 	rightImage();
+	rightButton()
 
 }
 

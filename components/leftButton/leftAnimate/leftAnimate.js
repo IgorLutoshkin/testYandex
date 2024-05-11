@@ -1,13 +1,15 @@
-import { animate, data } from "../data.js";
+import { animate, data } from "../../data.js";
 import { leftImage } from "../leftImage/leftImage.js";
-import { clearIntervalID, intervalFunc } from "../rightScroll/rightScroll.js";
 
-export function leftScroll() {
+
+
+export function leftAnimate() {
 
 	const addWidth = document.querySelector(".participants-item").clientWidth;
 	const containerList = document.querySelector(".participants-list");
 	const computedStyles = window.getComputedStyle(containerList);
 	const gapValue = computedStyles.getPropertyValue("gap");
+
 
 
 	//защита от  многократного нажатия на кнопку
@@ -31,14 +33,3 @@ export function leftScroll() {
 
 	});
 }
-
-/*  */
-
-const leftBtn = document.querySelector(".left");
-leftBtn.addEventListener("click", () => {
-	leftScroll()
-	clearIntervalID()
-	intervalFunc()
-
-});
-

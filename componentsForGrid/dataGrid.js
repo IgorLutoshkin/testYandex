@@ -10,6 +10,8 @@ export let dataGrid = {
 	numberCircle: 0, // количество элементов
 	circleElements: document.querySelectorAll(".block-pagination-circles span"),
 	currentIndex: 0,
+	colorYellow: "rgb(251, 206, 81)"
+
 }
 /*  */
 
@@ -18,7 +20,6 @@ dataGrid.numberItem = dataGrid.gridWrap.childElementCount;
 dataGrid.numberCircle = dataGrid.circleBlock.childElementCount;
 
 export function buttonRightScroll() {
-	dataGrid.buttonElementRight.style.backgroundColor = "#313131";
 	if (dataGrid.offset >= (dataGrid.numberCircle - 2) * (dataGrid.widthItem + 20)) {
 		dataGrid.offset = (dataGrid.numberCircle - 2) * (dataGrid.widthItem + 20);
 	}
@@ -88,33 +89,19 @@ function newOffsetResize() {
 			dataGrid.gridWrap.style.left = '';
 		} else {
 			dataGrid.gridWrap.style.left = '';
-			dataGrid.offset =( dataGrid.widthItem + 20) * dataGrid.currentIndex
+			dataGrid.offset = (dataGrid.widthItem + 20) * dataGrid.currentIndex
 			dataGrid.gridWrap.style.left = -dataGrid.offset + "px";
 		}
 	})
 }
 newOffsetResize()
 
-// buttonElementRight.addEventListener("mousedown", function () {
-// 	buttonElementRight.style.backgroundColor = "rgb(251, 206, 81)";
-// });
-// buttonElementLeft.addEventListener("mousedown", function () {
-// 	buttonElementLeft.style.backgroundColor = "rgb(251, 206, 81)";
-// });
+export const attachMobileHoverEvents = (button, color) => {
+	button.addEventListener('mousedown', function () {
+		button.style.backgroundColor = color;
+	});
 
-// /* 111111111111111111111111111111111111111111 */
-
-// const myBtn = document.querySelector(".button-left");
-// function handleResize() {
-// 	const screenWidth = window.innerWidth;
-// 	if (screenWidth >= 768) {
-// 		myBtn.addEventListener("mouseover", () => {
-// 			myBtn.style.background = "rgb(251, 206, 81)";
-// 		});
-// 		myBtn.addEventListener("mouseout", () => {
-// 			myBtn.style.background = "rgb(31, 31, 31)";
-// 		});
-// 	}
-// }
-// window.addEventListener("resize", handleResize);
-// handleResize();
+	button.addEventListener('mouseup', function () {
+		button.style.backgroundColor = '';
+	});
+}

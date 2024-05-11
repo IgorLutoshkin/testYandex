@@ -1,6 +1,8 @@
 export const data = {
   activeParticipant: 1,
   flag: true,
+  colorYellow: "rgb(251, 206, 81)",
+  colorBlack: "rgb(31, 31, 31)",
   participants: [
     {
       avatar: "./img/image-gamer.png",
@@ -54,4 +56,49 @@ export const animate = ({ duration, draw, removeElement }) => {
   });
 };
 
+
+
+
+export const handleHoverEffect = (button, color) => {
+  let innerWidth = window.innerWidth;
+  const handleResize = () => {
+    innerWidth = window.innerWidth;
+    if (innerWidth >= 769) {
+      attachDesktopHoverEvents(button, color);
+    } else {
+      attachMobileHoverEvents(button, color);
+    }
+  };
+  handleResize(); // вызываем функцию при первоначальной загрузке страницы
+  window.addEventListener('resize', handleResize);
+}
+
+
+const attachDesktopHoverEvents = (button, color) => {
+  button.addEventListener('mouseover', function () {
+    button.style.backgroundColor = color;
+  });
+
+  button.addEventListener('mouseout', function () {
+    button.style.backgroundColor = '';
+  });
+
+  button.addEventListener('mousedown', function () {
+    button.style.backgroundColor = '';
+  });
+
+  button.addEventListener('mouseup', function () {
+    button.style.backgroundColor = color;
+  });
+}
+
+const attachMobileHoverEvents = (button, color) => {
+  button.addEventListener('mousedown', function () {
+    button.style.backgroundColor = color;
+  });
+
+  button.addEventListener('mouseup', function () {
+    button.style.backgroundColor = '';
+  });
+}
 

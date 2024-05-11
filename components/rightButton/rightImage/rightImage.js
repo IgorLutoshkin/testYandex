@@ -1,5 +1,5 @@
-import { data } from "../data.js";
-import { itemElement } from "../listParticipant/itemElement/itemElement.js";
+import { data } from "../../data.js";
+import { itemElement } from "../../listParticipant/itemElement/itemElement.js";
 import { rightCount } from "../rightCount/rightCount.js";
 
 export function rightImage() {
@@ -9,5 +9,4 @@ export function rightImage() {
 	list.append(itemElement(rightImg));
 
 	rightCount(data.activeParticipant);
-	// return rightImg;
 }
