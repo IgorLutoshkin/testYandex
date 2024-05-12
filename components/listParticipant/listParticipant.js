@@ -1,4 +1,5 @@
 import { data } from "../data.js";
+import { hoverEffect } from "../hoverEffect/hoverEffect.js";
 import { leftButton } from "../leftButton/leftButton.js";
 import { leftImage } from "../leftButton/leftImage/leftImage.js";
 import { rightButton } from "../rightButton/rightButton.js";
@@ -16,7 +17,7 @@ export function listParticipant() {
 	listElement.append(itemElement(data.activeParticipant));
 	rightImage();
 	rightButton()
-
+	hoverEffect()
 }
 
 

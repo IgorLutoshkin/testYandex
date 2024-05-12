@@ -3,6 +3,7 @@ export const data = {
   flag: true,
   colorYellow: "rgb(251, 206, 81)",
   colorBlack: "rgb(31, 31, 31)",
+  colorGrey: "rgb(255, 255, 255)",
   participants: [
     {
       avatar: "./img/image-gamer.png",
@@ -59,46 +60,60 @@ export const animate = ({ duration, draw, removeElement }) => {
 
 
 
-export const handleHoverEffect = (button, color) => {
-  let innerWidth = window.innerWidth;
+export const handleHoverEffect = (button, backgroundColor, textColor) => {
+
+  console.log(innerWidth);
+
   const handleResize = () => {
-    innerWidth = window.innerWidth;
+    // innerWidth = window.innerWidth;
+    let innerWidth = window.innerWidth;
+
     if (innerWidth >= 769) {
-      attachDesktopHoverEvents(button, color);
+      attachDesktopHoverEvents(button, backgroundColor, textColor);
     } else {
-      attachMobileHoverEvents(button, color);
+      console.log(innerWidth);
+
+      attachMobileHoverEvents(button, backgroundColor, textColor);
     }
   };
-  handleResize(); // вызываем функцию при первоначальной загрузке страницы
+
+  handleResize(); // вызываем функцию при первоначальной загрузке страницы 
+
   window.addEventListener('resize', handleResize);
 }
 
-
-const attachDesktopHoverEvents = (button, color) => {
+const attachDesktopHoverEvents = (button, backgroundColor, textColor) => {
   button.addEventListener('mouseover', function () {
-    button.style.backgroundColor = color;
+    button.style.backgroundColor = backgroundColor;
+    button.style.color = textColor;
   });
 
   button.addEventListener('mouseout', function () {
     button.style.backgroundColor = '';
+    button.style.color = '';
   });
 
   button.addEventListener('mousedown', function () {
     button.style.backgroundColor = '';
+    button.style.color = '';
   });
 
   button.addEventListener('mouseup', function () {
-    button.style.backgroundColor = color;
+    button.style.backgroundColor = backgroundColor;
+    button.style.color = textColor;
   });
 }
 
-const attachMobileHoverEvents = (button, color) => {
-  button.addEventListener('mousedown', function () {
-    button.style.backgroundColor = color;
+const attachMobileHoverEvents = (button, backgroundColor, textColor) => {
+  button.addEventListener('touchstart', function () {
+    button.style.backgroundColor = backgroundColor;
+    button.style.color = textColor;
   });
 
-  button.addEventListener('mouseup', function () {
+  button.addEventListener('touchend', function () {
     button.style.backgroundColor = '';
+    button.style.color = '';
   });
 }
+
 

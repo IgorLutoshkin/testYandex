@@ -97,11 +97,11 @@ function newOffsetResize() {
 newOffsetResize()
 
 export const attachMobileHoverEvents = (button, color) => {
-	button.addEventListener('mousedown', function () {
+	button.addEventListener('touchstart', function () {
 		button.style.backgroundColor = color;
 	});
 
-	button.addEventListener('mouseup', function () {
+	button.addEventListener('touchend', function () {
 		button.style.backgroundColor = '';
 	});
 }
