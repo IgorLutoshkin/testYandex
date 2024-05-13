@@ -61,17 +61,15 @@ export const animate = ({ duration, draw, removeElement }) => {
 
 
 export const handleHoverEffect = (button, backgroundColor, textColor) => {
+  let innerWidth = window.innerWidth;
 
-  console.log(innerWidth);
 
   const handleResize = () => {
-    // innerWidth = window.innerWidth;
-    let innerWidth = window.innerWidth;
+    innerWidth = window.innerWidth;
 
     if (innerWidth >= 769) {
       attachDesktopHoverEvents(button, backgroundColor, textColor);
     } else {
-      console.log(innerWidth);
 
       attachMobileHoverEvents(button, backgroundColor, textColor);
     }

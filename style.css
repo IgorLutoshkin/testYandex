@@ -289,8 +289,8 @@ body {
 }
 
 .info-chess-session__aside {
-  padding-top: 48px;
-  padding-left: 17px;
+margin-top: 48px;
+margin-left: 17px;
 }
 .info-chess-session {
   margin-left: 45px;
@@ -695,8 +695,8 @@ td + td {
 
   .info-chess-session {
     width: 100%;
+    margin-left: 20px;
     padding-top: 30px;
-    /* max-width: 764px; */
     flex-wrap: wrap;
     justify-content: center;
   }
